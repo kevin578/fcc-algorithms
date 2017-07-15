@@ -1,0 +1,29 @@
+<script>
+
+
+function chunkArrayInGroups(arr, size) {
+
+
+newArray = [];
+
+
+while (arr.length > 0) {
+	newArray.push(arr.slice(0, size));
+
+	arr.splice(0, size);
+}
+
+
+  // Break it up.
+  return newArray;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);
+
+
+
+
+
+
+
+</script>

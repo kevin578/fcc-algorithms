@@ -1,0 +1,38 @@
+<script>
+
+function mutation(arr) {
+
+var searchingIn = arr[0];
+var searchingFor = arr[1];
+
+searchingIn = searchingIn.toLowerCase();
+searchingFor = searchingFor.toLowerCase();
+searchingFor = searchingFor.split(""); 
+
+console.log(searchingIn);
+console.log(searchingIn.length);
+
+
+for (var i = 0; i < searchingFor.length; i++) {
+
+console.log(searchingFor[i]);
+
+	if (searchingIn.indexOf(searchingFor[i]) == -1) {
+
+		console.log("False");
+		return false;
+}
+
+
+
+
+}
+
+	console.log("True");
+  return true;
+}
+mutation(["Alien", "line"])
+
+
+
+</script>

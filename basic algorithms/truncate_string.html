@@ -1,0 +1,26 @@
+<script>
+
+
+function truncateString(str, num) {
+  // Clear 
+
+  if (num >=3 && num <= str.length - 3) {
+  	num = num - 3;	
+  }
+
+
+
+var new_str = str.slice(0, num);
+
+if (num <= str.length - 3 || num <= 3) {
+	new_str = new_str + "...";
+}
+
+console.log(new_str);
+ 
+  return new_str;
+}
+
+truncateString("A-", 1)
+
+</script>
