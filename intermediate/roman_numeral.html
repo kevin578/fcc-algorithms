@@ -1,0 +1,39 @@
+<script>
+
+
+function convertToRoman(num) {
+ 
+var roman = '';
+
+addLetters(1000, 'M');
+addLetters(500, 'D');
+addLetters(100, 'C');
+addLetters(50, 'L');
+addLetters(10, 'X');
+addLetters(5, 'V');
+addLetters(1, 'I');
+
+
+
+
+function addLetters(number, letter) {
+	while(num >= number) {
+		roman += letter;
+		num -= number;
+	}
+}
+
+return roman;
+}
+
+convertToRoman(45);
+
+
+
+
+
+
+
+
+
+</script>
