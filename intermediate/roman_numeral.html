@@ -2,31 +2,47 @@
 
 
 function convertToRoman(num) {
- 
-var roman = '';
-
-addLetters(1000, 'M');
-addLetters(500, 'D');
-addLetters(100, 'C');
-addLetters(50, 'L');
-addLetters(10, 'X');
-addLetters(5, 'V');
-addLetters(1, 'I');
+  
+	romanNumerals = ['I', 'V', 'X', 'L', 'C'];
 
 
+	var numArray = num.toString().split("");
+	var romanNumeral;
 
-
-function addLetters(number, letter) {
-	while(num >= number) {
-		roman += letter;
-		num -= number;
+	for(var i = numArray.length - 1; i >= 0; i--) {
+		console.log(getNumeral(i, numArray[i]));
 	}
+
+
+	function getNumeral(index, num) {
+		
+		var low = romanNumerals[index];
+		var mid = romanNumerals[index + 1];
+		var high = romanNumerals[index + 2];
+
+
+		var digits = {
+			1: low, 
+			2: low + low, 
+			3: low + low + low, 
+			4: low + mid,
+			5: mid,
+			6: mid + low,
+			7: mid + low + low,
+			8: mid + low + low + low,
+			9: mid + high
+		}
+
+		return digits[num];
+	}
+
+
 }
 
-return roman;
-}
 
-convertToRoman(45);
+
+
+convertToRoman(85);
 
 
 
