@@ -3,15 +3,28 @@
 
 function convertToRoman(num) {
   
-	romanNumerals = ['I', 'V', 'X', 'L', 'C'];
+	romanNumerals = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
 
 
 	var numArray = num.toString().split("");
+	numArray = numArray.reverse();
 	var romanNumeral;
 
-	for(var i = numArray.length - 1; i >= 0; i--) {
-		console.log(getNumeral(i, numArray[i]));
-	}
+	
+	var index = 0;
+
+   	
+
+
+   	numArray = numArray.map(function(x) {
+   	rn = getNumeral(index, x);
+ 	index+= 2;
+ 	return rn;
+   })
+
+   	numArray = numArray.reverse();
+   	numArray = numArray.join("");
+   	return(numArray);
 
 
 	function getNumeral(index, num) {
@@ -30,11 +43,12 @@ function convertToRoman(num) {
 			6: mid + low,
 			7: mid + low + low,
 			8: mid + low + low + low,
-			9: mid + high
+			9: low + high
 		}
 
 		return digits[num];
 	}
+
 
 
 }
@@ -42,7 +56,7 @@ function convertToRoman(num) {
 
 
 
-convertToRoman(85);
+convertToRoman(3999);
 
 
 
