@@ -1,0 +1,36 @@
+<script>
+
+function whatIsInAName(collection, source) {
+
+	//create a new array with only matching objects
+ 	var arr = collection.filter(function(x) {
+
+
+ 	//get all of the keys out of the source keys out of the source
+ 	var source_keys = Object.keys(source); 	 
+
+ 	//go through all the source keys  
+ 	for (key in source_keys) {
+ 		source_key = source_keys[key];
+ 		//check if source and the collection match
+ 		if (source[source_key] == x[source_key]) {
+ 			 return x;
+ 		}
+ 	
+ 	}
+ 	
+
+ });
+console.log(arr)
+return arr
+
+}
+
+
+
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 })
+
+
+
+
+</script>

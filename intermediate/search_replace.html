@@ -1,0 +1,29 @@
+<html>
+
+<script>
+
+function myReplace(str, before, after) {
+
+	if ( /^[A-Z]/.test(before) == true ) {
+		after = after.charAt(0).toUpperCase() + after.slice(1);
+	} 
+
+	else {
+		after = after.charAt(0).toLowerCase() + after.slice(1);
+	}
+
+	
+	var string = str.replace(before, after);
+	
+	console.log(string);
+  
+  	return string;
+}
+
+myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
+
+
+</script>
+
+
+</html>
