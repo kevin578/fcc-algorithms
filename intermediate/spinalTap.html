@@ -1,0 +1,24 @@
+<script>
+
+
+
+function spinalCase(str) {
+
+  str = str.charAt(0).toLowerCase() + str.slice(1);
+
+  str = str.replace(/[A-Z\ba-z]/g, function(matched){
+  	return '-' + matched.toLowerCase();
+  });
+  str = str.replace(/[\s_]/g, "");
+
+  console.log (str);
+}
+
+spinalCase("Teletubbies say Eh-oh")
+
+
+
+
+
+
+</script>

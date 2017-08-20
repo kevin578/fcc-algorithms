@@ -1,0 +1,33 @@
+<script>
+
+function fearNotLetter(str) {
+ 
+ 	for (var i = 0; i < str.length - 1; i++) {
+ 		if (str.charCodeAt(i + 1) - str.charCodeAt(i) != 1) {
+ 			var uni_value = str.charCodeAt(i);
+ 			//console.log( String.fromCharCode(uni_value + 1) );
+ 			return String.fromCharCode(uni_value + 1);
+ 		};
+ 	}
+
+ 	return undefined;
+
+
+}
+
+fearNotLetter("abce") //should return "d".
+fearNotLetter("abcdefghjklmno") //should return "i".
+fearNotLetter("bcd") //should return undefined.
+fearNotLetter("yz")
+
+
+
+
+
+
+
+
+
+
+
+</script>

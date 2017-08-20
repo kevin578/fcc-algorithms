@@ -1,0 +1,29 @@
+<script>
+
+
+function convertHTML(str) {
+ 
+var map = {
+	'&': '&​amp;',
+	'<': '&​lt;',
+	'>': '&​gt;',
+	'"': '&​quot;'
+}
+
+str = str.replace(/[&<>"]/g, function(matched){
+	return map[matched];
+});
+
+console.log( str );
+}
+
+convertHTML("Dolce & Gabbana");
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,35 @@
+<script>
+
+
+function uniteUnique(arr) {
+  
+
+  var args = Array.from(arguments)
+
+  arr = args.reduce( (a,b) => a.concat(b) );
+
+  var filtered_arr = [];
+
+  for (a in arr) {
+  	if (!filtered_arr.includes(arr[a])) {
+  		filtered_arr.push(arr[a]);
+  	}
+  }
+
+
+  return filtered_arr;
+
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+ 
+
+
+
+
+
+
+
+
+</script>
