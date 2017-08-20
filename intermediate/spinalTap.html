@@ -6,15 +6,22 @@ function spinalCase(str) {
 
   str = str.charAt(0).toLowerCase() + str.slice(1);
 
-  str = str.replace(/[A-Z\ba-z]/g, function(matched){
-  	return '-' + matched.toLowerCase();
-  });
-  str = str.replace(/[\s_]/g, "");
+  str = str.replace(/[A-Z]/g, function(match){
+  	return "-" + match.toLowerCase();
+  })
 
-  console.log (str);
+  str = str.replace(/[\s_]/g, "-");
+
+
+
+  str = str.replace(/--/g, "-")
+
+
+
+return str;
 }
 
-spinalCase("Teletubbies say Eh-oh")
+spinalCase("The_Andy_Griffith_Show")
 
 
 

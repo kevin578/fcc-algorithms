@@ -1,0 +1,30 @@
+<script>
+
+
+function sumFibs(num) {
+
+var i = 1;
+var x = 1;
+var sum = 1;
+    var a = 0, b = 1, f = 1;
+    
+    while (f <= num) {
+        f = a + b;
+        a = b;
+        b = f; 
+        if (f % 2 == 1  &&  f <= num) {
+        	sum += f;
+        }
+    } 
+console.log(sum)
+}
+
+
+sumFibs(1000);
+
+
+
+
+
+
+</script>
