@@ -1,0 +1,21 @@
+<script>
+
+
+function dropElements(arr, func) {
+  
+  var startIndex = arr.findIndex(func);
+  
+  if (startIndex = -1 ) {
+  	var empty = [];
+  	return empty
+  }
+  else {
+  	return arr.slice(startIndex, arr.length);
+  }
+
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}))
+
+
+</script>

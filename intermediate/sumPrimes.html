@@ -1,0 +1,44 @@
+<script>
+
+
+
+
+function sumPrimes(num) {
+  
+var sieve = []
+
+  for (var i = 2; i <= num; i++) {
+  	sieve.push(i);
+  }
+
+  for (var x = 2; x <= num; x++) {
+  	if (sieve.indexOf(x) == -1)  continue; 
+  	for (var y = x + x; y <= num; y += x) {
+  		if (sieve.indexOf(y) != -1) remove(y); 
+  	}
+  }
+
+  sieve = sieve.reduce((a,b) => a + b)
+
+  function remove(item) {
+  	
+  	var i = sieve.indexOf(item);
+	sieve.splice(i, 1);
+
+  }
+
+
+  console.log(sieve);
+return sieve;
+
+
+
+}
+
+sumPrimes(3197);
+
+
+
+
+
+</script>
