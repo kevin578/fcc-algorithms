@@ -1,0 +1,37 @@
+
+<script>
+function smallestCommons(arr) {
+
+var high = Math.max(arr[0],arr[1]);
+var low = Math.min(arr[0],arr[1]);
+ 
+
+var range = new Array();
+
+for (var i = low; i <= high; i++) {
+	range.push(i);
+}
+
+return range.reduce(function(sum, index) {
+	return lcm(sum, index);
+});
+
+function lcm(a,b) {
+
+	return a * b / gcd(a,b);
+
+	 function gcd(a,b) { 
+	 	if (b == 0) return a;
+	 	else return gcd(b, a % b);
+	 }
+
+}
+
+}
+
+console.log(smallestCommons([4,20]));
+
+
+
+
+</script>
